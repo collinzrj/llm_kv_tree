@@ -1,5 +1,7 @@
 ## LLM KV Tree
 
+LLM KV Tree helps you speeds up your tree search in LLM inference by sharing the KV cache. This can be used to speed up **Beam Search** and **Monte Carlo Tree Search**.
+
 LLM KV Tree is a python class that automatically stores kv cache of LLM in a tree format, you don't need to handle the store and loading of kv cache yourself, you can just call `llm_tree_accelerate_next_logit`, and it automatically finds the maximum prefix cached, and stores the kv cache of current tokens
 
 You can also call `llm_tree_accelerate_next_logit_batch` for batch processing, it automatically finds the maximum length `n` such that `tokens[:n]` of all the tokens in the batch are cached
